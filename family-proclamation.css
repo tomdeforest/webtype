@@ -1,0 +1,87 @@
+/* Show baseline grid */
+/* html.show-grid body {
+  background-image: linear-gradient(to bottom, #0ff 0, transparent 1px);
+  background-repeat: repeat-y;
+  background-size: 100% 1rem;
+} */
+
+body {
+	font-family: "Baskervville", serif;
+	max-width: 68ch;
+	margin: 0 auto;
+	padding: 6rem 2em;
+	background-color: #eee;
+}
+
+/* Set headings to baseline */
+h1 {
+  --baselines: 3;
+  --beneath: 1;
+  --baseline-shift: calc(calc(calc(var(--baselines) * 1rem) - 1cap) / 2);
+  --baseline-push: calc(calc(var(--beneath) * 1rem) - var(--baseline-shift));
+  
+	font-size: 3rem;
+  line-height: calc(var(--baselines) * 1rem);
+  font-feature-settings: 'kern', 'lnum', 'liga';
+  padding-top: var(--baseline-shift);
+	margin-bottom: var(--baseline-push);
+}
+
+p {
+  --baselines: 2;
+  --beneath: 1;
+  --baseline-shift: calc(calc(calc(var(--baselines) * 1rem) - 1cap) / 2);
+  --baseline-push: calc(calc(var(--beneath) * 1rem) - var(--baseline-shift));
+
+  line-height: calc(var(--baselines) * 1rem);
+  font-feature-settings: 'kern', 'lnum', 'liga';
+  padding-top: var(--baseline-shift);
+	margin-bottom: var(--baseline-push);
+}
+
+p:last-child {
+	--beneath: 3;
+}
+
+cite {
+	font-style: italic;
+}
+
+/* Header */
+header {
+	text-align: center;
+	text-wrap: balance;
+}
+
+header h1,
+header .subtitle {
+	font-family: "Baskervville SC", serif;
+	font-variant: small-caps;
+	font-feature-settings: "smcp";
+	text-transform: lowercase;
+}
+
+/* Content */
+.content {
+	text-align: justify;
+}
+
+/* Footer */
+footer {
+	text-align: center;
+}
+
+/* Footer paragraphs aligned to baseline */
+footer p {
+  --baselines: 2;
+  --beneath: 1;
+  --baseline-shift: calc(calc(calc(var(--baselines) * 1rem) - 1cap) / 2);
+  --baseline-push: calc(calc(var(--beneath) * 1rem) - var(--baseline-shift));
+
+  font-size: .85rem;
+  line-height: calc(var(--baselines) * 1rem);
+  font-feature-settings: 'kern', 'lnum', 'liga';
+  padding-top: var(--baseline-shift);
+	margin-bottom: var(--baseline-push);
+	text-wrap: balance;
+}
